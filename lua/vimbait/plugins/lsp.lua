@@ -20,6 +20,9 @@ return {
 	    local lspconfig = require('lspconfig')
 	    lspconfig.lua_ls.setup({})
 	    lspconfig.clangd.setup({})
+	    lspconfig.lemminx.setup({})
+	    lspconfig.hyprls.setup({})
+	    lspconfig.pylsp.setup({})
 
 	    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 	    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
