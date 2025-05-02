@@ -7,6 +7,7 @@ return {
 	configs.setup({
 	    ensure_installed = {
 		"c",
+		"asm",
 		"python",
 		"lua",
 		"vim",
