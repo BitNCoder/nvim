@@ -18,13 +18,22 @@ return {
 	'neovim/nvim-lspconfig',
 	config = function()
 	    local lspconfig = require('lspconfig')
-	    lspconfig.lua_ls.setup({})
+	    lspconfig.lua_ls.setup({
+		settings = {
+		    Lua = {
+			diagnostics = {
+			    globals = { "vim" },
+			}
+		    }
+		}
+	    })
 	    lspconfig.clangd.setup({})
 	    lspconfig.lemminx.setup({})
 	    lspconfig.hyprls.setup({})
 	    lspconfig.pylsp.setup({})
 
 	    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+	    vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, {})
 	    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 	    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
 	end
