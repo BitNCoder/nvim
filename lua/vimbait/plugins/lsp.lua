@@ -17,8 +17,7 @@ return {
     {
 	'neovim/nvim-lspconfig',
 	config = function()
-	    local lspconfig = require('lspconfig')
-	    lspconfig.lua_ls.setup({
+	    vim.lsp.config['lua_ls'] ={
 		settings = {
 		    Lua = {
 			diagnostics = {
@@ -26,11 +25,11 @@ return {
 			}
 		    }
 		}
-	    })
-	    lspconfig.clangd.setup({})
-	    lspconfig.lemminx.setup({})
-	    lspconfig.hyprls.setup({})
-	    lspconfig.pylsp.setup({})
+	    }
+	    vim.lsp.config['clangd'] = {}
+	    vim.lsp.config['lemminx'] = {}
+	    vim.lsp.config['hyprls'] = {}
+	    vim.lsp.config['pylsp'] = {}
 
 	    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 	    vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, {})
